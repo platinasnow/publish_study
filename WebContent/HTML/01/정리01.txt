@@ -1,0 +1,117 @@
+1. HTML,XHTML 기본 원칙
+
+1-1
+1) HTML은 시작(< >)과 끝 (</ >)이 있어야 함.
+2) 단일항목인 경우는 그냥 사용 ( <br>, <img> ... )
+3) XHTML 형식은 단일 항목일 경우 끝을 붙여줌 ( <br/>, <img/> ...)
+4) HTML에서 < />로 끝나는 것은 가능하지만 XHTML에서 < >은 가능하지 않음
+(둘의 호환을 위해 < />  로 끝나게 하는 것을 권장)
+
+
+1-2. DOCTYPE
+해당 문서가 HTML4인지 HTML5인지 XHTML인지 명시.
+
+HTML4
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"html://www.w3.org/TR/html4/strict.dtd">
+
+HTML5
+<!DOCTYPE html>
+
+XHTML 1.0
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"html://www.w3.org/TR/1999/PR-xhtml1-19991210/DTD/xhtml1-trasitional.dtd">
+
+
+
+
+2. 시멘틱 웹
+HTML5에서 기계적인 검색 엔진은 어떤 태그가 어떤 기능을 하는지 판단 할 수 없으므로 특정한 태그에 의미를 부여하여 사용함.
+
+
+2-1. HTML5 이전의 공간 분할
+<div> (block)
+<span> (inline)
+
+
+2-2. HTML5 이후의 공간 분할 (block)
+<header>  해더 
+<nav>     네비게이션
+<aside>   사이드 위치
+<section> 여러 중심 내용을 감싸는 공간
+<article> 글자가 많이 들어가는 공간
+<footer>  푸터
+
+*IE8 이하에서는 header등에 영역이 잡히지 않아 css 및 javascript의 셀렉터도 사용할 수 없음.
+(호환성을 맞추기 위해서 일반적으로 사용되지 않음.)
+
+
+
+3. 목록
+
+3-1. 순서 목록
+
+<ol> : 순서가 있는 경우(ordered)
+<ul> : 순서가 없는 경우(unordered)
+<li> : ol, ul 안의 list item
+
+<ul>
+  <li>가나다</li>
+  <li>마바사</li>
+</ul>
+
+
+3-2. 정의 목록
+
+용어를 설명할 때 사용하는 태그
+<dl> 정의 목록 
+<dt> 정의 용어
+<dd> 정의 설명
+
+<dl>
+  <dt>용어 정의</dt>
+  <dd>용어 설명</dd>
+</dl>
+
+
+
+4. 테이블
+<table></table>
+
+<thaed></thead>
+
+<tbody></tbody>
+
+<colgroup>
+ <col width="100%" />  - 컬럼의 크기를 명시하기 위해 사용
+</colgroup>
+
+<th></th>
+
+<tr></tr>
+
+<td></td>
+
+
+5. 폼
+<form></form>
+
+<input type="" /> - checkbox, radio, text,  password, submit, reset, button, hidden, image, file
+
+<button type=""></button> - type을 명시하지 않을 시 type="submit"이 초기 값
+
+<select>  - multiple
+ <option></option>
+ <optgroup>
+   <option></option>
+ </optgroup>
+</select>
+
+<textarea></textarea>
+
+
+
+
+
+
+
