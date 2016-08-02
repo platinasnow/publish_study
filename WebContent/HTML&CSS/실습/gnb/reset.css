@@ -5,8 +5,8 @@
 	font-family: NanumWeb;
 	font-weight: 500;
 	font-style: normal;
-	src: url('../font/NanumBarunGothic.eot');
-	src: url('../font/NanumBarunGothic.eot?#iefix') format('embedded-opentype'), url('../font/NanumBarunGothic.ttf') format('truetype');
+	src: url('font/NanumBarunGothic.eot');
+	src: url('font/NanumBarunGothic.eot?#iefix') format('embedded-opentype'), url('font/NanumBarunGothic.ttf') format('truetype');
 }
 
 /* reset */
