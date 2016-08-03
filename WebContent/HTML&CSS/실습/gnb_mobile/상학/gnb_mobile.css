@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+body,html{height: 100%;overflow: hidden}
+.header{overflow: hidden;}
+.header div{float: left;}
+.header .menu{width:20%;}
+.header .menu img{width:100%;}
+.header .main{width:60%;text-align: center;}
+.header .main img{width:65%;}
+.header .language-wrap{width:20%;display: inline-block;text-align: center;}
+.header .language-wrap select{margin-top:30%;padding: 5% 8%;}
+
+.contents img{width:100%;}
+.contents ul{overflow: hidden;border-top: 1px solid #aaa; }
+.contents ul li{float:left;width: 33.1%;font-size: 16px;font-weight: bold;text-align: center;padding: 6% 0;border-left: 1px solid #c4c4c4;background: url(../menu_bottom_back.png)}
+.contents ul li:FIRST-CHILD{border-left: 0px solid #c4c4c4;}
+.footer img{width:100%;}
+
+.cover{position:absolute;left:0;top:0;width:100%;height:100%;z-index: 50;background: #000;opacity:0.33;}
+.gnb{position:absolute;left:0;top:0;width:48%;height:100%;z-index: 51;background-color: #fff;box-shadow:5px 0px 20px rgba(0,0,0,0.35);overflow: scroll;}
+.gnb .gnb-header{background-color: #7EDBFD;height: 10%;min-height: 60px;}
+.gnb .gnb-header span{float: right;width:15%;height:100%;background: url('../menu_close.png');background-repeat:no-repeat;background-size:80%;background-position:center;display: inline-block;text-indent: -9999px;margin-right:5%;}
+.gnb .gnb-contents .title{font-size:20px;font-weight: bold;border-bottom: 1px solid #D4F4FF;padding: 8% 9%;}
+.gnb .gnb-contents .arrow{float:right;background: url('../menu_off.png');background-repeat:no-repeat;background-size:80%;background-position:center;text-indent: -9999px;display: inline-block;width:10%;}
+.gnb .gnb-contents .arrow.on{background: url('../menu_on.png');background-repeat:no-repeat;background-size:80%;background-position:center;}
+.gnb .gnb-contents ul li{background:#F3FBFE;border-bottom: 1px solid #D4F4FF;padding:6% 6%;font-size:12px;}
+.gnb .gnb-contents ul li:BEFORE{background: url('../menu_ico.png');background-size:40%;background-repeat:no-repeat;background-position:center;width:10px;content:"-";display: inline-block;text-indent: -9999px;margin-right:1%;}
+
