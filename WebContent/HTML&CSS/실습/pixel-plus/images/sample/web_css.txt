@@ -1,0 +1,11 @@
+footer
+background : #373737;
+height : 167px;
+text-color : #a7a7a7;
+font-size:14px;
+
+
+table 
+Analog Sensor : 26px;
+³ª¸ÓÁö : 13px;
+under line : 2px solid #006ddc;
