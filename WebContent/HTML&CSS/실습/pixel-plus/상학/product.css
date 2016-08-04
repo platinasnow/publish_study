@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+.contents{font-size:13px;}
+.contents .title{text-align: center;margin: 80px 0;}
+.contents .tab{background-image:url('../images/web_product/app_list_back.png');width:980px;height: 45px;margin: 0 auto;}
+.contents .tab li{display: inline-block;width:196px;height: 30px;text-align: center;font-weight: bold;padding-top:15px}
+.contents .tab li.on{background-image:url('../images/web_product/app_list_on.png');width:196px;height: 36px;color: #f0f0f0;}
+.contents .sub-title{text-align: center;margin:100px 0 50px;font-size:26px;background-image:url('../images/web_product/tit_top_bar.png');background-repeat: no-repeat;background-position: top;padding-top: 15px;}
+
+.contents .board table{width:980px;margin: 0 auto;border-bottom: 2px solid #006ddc;margin-bottom: 130px;}
+.contents .board table thead tr{height: 48px;}
+.contents .board table thead tr th{background-image:url('../images/web_product/board_back.png');color: #f0f0f0;border-right: 1px solid #fff;background-repeat: repeat-x;padding: 0 14px;}
+.contents .board table thead tr th:FIRST-CHILD {background-image:url('../images/web_product/board_first.png');background-repeat: no-repeat;}
+.contents .board table thead tr th:LAST-CHILD {background-image:url('../images/web_product/board_last.png');background-repeat: no-repeat;}
+.contents .board table tbody tr{border-bottom:1px solid #CDE1F9;height: 60px;text-align: center;}
+.contents .board table tbody tr:LAST-CHILD{border-bottom:0px;}
+.contents .board table tbody tr td:nth-child(2){font-weight: bold;}
+.contents .board table tbody tr td:nth-child(2) ul{padding: 0 25px;text-align: left;}
+.contents .board table tbody tr td:nth-child(2) ul li{display: inline-block;padding: 0 1px;}
+.contents .board .guide-wrap ul{margin: 0 auto;width:950px;text-align: right;padding: 10px 15px;}
+.contents .board .guide-wrap ul li{display: inline-block;padding: 0 5px;}
+.contents .board .guide-wrap ul li img{width:21px;height: 21px;padding-right:5px;vertical-align: middle;}
+
+.contents .contact-us{text-align: center;margin-bottom: 180px;}
+.contents .contact-us h2{font-size:24px;font-weight: bold;margin-bottom: 15px;}
+.contents .contact-us .text{font-size:17px;margin-bottom: 50px;}
+.contents .contact-us .btn{background:#016DDC;color: #f0f0f0;padding: 10px 87px;font-size:21px;}

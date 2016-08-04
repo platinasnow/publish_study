@@ -1,0 +1,10 @@
+@CHARSET "UTF-8";
+
+.footer{width:100%;height:167px;background : #373737;font-size:14px;color:#a7a7a7;}
+.footer .inner{width:980px;margin: 0 auto;padding:23px 0 0;}
+.footer .inner .text{overflow: hidden;padding: 17px 0 15px;}
+.footer .inner .text-left{float: left;}
+.footer .inner .text-right{float: right;}
+.footer .inner .text-right span{padding: 0 5px;vertical-align: middle;}
+.footer .inner .hr{width:970px;height: 1px;background-color: #a7a7a7;margin: 0 auto;}
+.footer .inner .copy{padding: 13px 0;font-size:13px; }
