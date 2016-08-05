@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="../css/reset.css">
+<style type="text/css">
+#gnb {height: 72px; width: 1260px; margin: auto;}
+#logo {float: left; margin-top: 10px;margin-right: 25px;}
+#header {height: 72px; display: inline-block; }
+#header li {float: left; margin: 26px 55px 10px 55px; font-family:sans-serif; font-size: 15px; font-weight: bold; color: #656565;}
+#lang{display: inline-block; margin-left: 60px; height: 49px;}
+#language{display: inline-block; heigth: 63px; float: left; -webkit-appearance: none; padding: 0px 20px 2px 8px; background: url("../images/select_arrow.png") no-repeat 95% 50%; background-size: 5px;
+				font-family:나눔고딕; font-size: 13px; font-weight: normal; color: #656565;}
+#gnb_list {display:none; margin: auto; padding-left: 225px; height: 210px; width: 1030px;}
+#gnb_list .first{width: 143px;}
+#gnb_list ul{float:left; width: 170px;}
+#gnb_list ul li{font-family:나눔고딕; font-size: 13px; font-weight: normal; color: #656565; font-size: 13px; margin: 15px 0px 23px;}
+#top{box-shadow: 0px 1px 5px;}
+/** box-shadow : 1px 1px 1px #fff (오른쪽, 아래, 흐림도, 색상)  */
+
+.contents {width: 1260px; margin: auto;}
+.contents .tab h1{font-weight: bold; font-size: 35px; text-align: center; margin-top: 80px;}
+.contents .tab .tab_list{margin-left: 155px; margin-top: 40px; height: 45px; width: 980px; background: url("../images/web_product/app_list_back.png");}
+.contents .tab .tab_list li{float: left; width: 195px; text-align: center; padding-top: 13px;}
+.contents .tab .tab_list .on{background: url("../images/web_product/app_list_on.png"); width: 195px; height: 39px;}
+
+.contents .product_list{width: 1260px; margin: auto;}
+.contents .product_list h3{font-weight: bold; font-size: 22px; padding-top: 50px; margin-top: 45px; text-align: center; background: url("../images/web_product/tit_top_bar.png") no-repeat; background-position: center;}
+.contents .product_list .product_type {margin-left: 155px; margin-top: 40px; height: 24px; width: 980px; text-align: right;}
+.contents .product_list .product_type li{float: right; padding-left: 23px;  padding-right: 12px;}
+.contents .product_list .product_type .new{background: url("../images/web_product/pro_ico_new.gif") no-repeat;}
+.contents .product_list .product_type .best{background: url("../images/web_product/pro_ico_best.gif") no-repeat;}
+.contents .product_list .product_type .update{background: url("../images/web_product/pro_ico_update.gif") no-repeat;}
+
+.contents .product_list .product_table{width: 980px; margin: auto; margin-left: 155px;}
+.contents .product_list .product_table .title_tr{font-size: 13.1px; color: white; background: url("../images/web_product/board_back.png"); height: 47px;}
+.contents .product_list .product_table .title_tr th{border-right: 1px solid white;}
+.contents .product_list .product_table .title_tr .first{background: url("../images/web_product/board_first.png"); }
+.contents .product_list .product_table .title_tr .last{background: url("../images/web_product/board_last.png"); background-size: cover;}
+.contents .product_list .product_table .product_body tr{height: 55px; text-align: center; border-bottom: 1px solid #CDE2F7;}
+.contents .product_list .product_table .product_body tr:last-of-type{border-bottom: 2px solid #016DDC;}
+/* .contents .product_list .product_table .product_body tr.new td:nth-of-type(2){background: url("../images/web_product/pro_ico_new2.gif") no-repeat;}
+.contents .product_list .product_table .product_body tr.best td:nth-of-type(2){background: url("../images/web_product/pro_ico_best2.gif") no-repeat;}
+.contents .product_list .product_table .product_body tr.update td:nth-of-type(2){background: url("../images/web_product/pro_ico_update2.gif") no-repeat;} */
+
+.contents .contact_area {height: 200px; margin: auto; text-align: center; margin-top: 100px;}
+.contents .contact_area h3{font-weight: bold; font-size: 20px; margin-bottom: 15px;}
+.contents .contact_area span{display: inline-block; margin-bottom: 50px;}
+.contents .contact_area a{display: inherit; width: 130px; height: 25px; margin: auto; padding-top: 7px; background-color: #016DDC; color: white;}
+
+.footer{height: 180px; margin: auto; background-color: #373737; width: 100%;}
+.footer .company_info{height: 110px; margin: auto; width: 980px; border-bottom: 1px solid #6C6C6C;}
+.footer .company_info span{color: #6C6C6C; font-weight: bold;}
+.footer .company_info span:first-of-type{display:block; }
+.footer .company_info span:last-of-type{margin-left: 30px;}
+.footer .company_info span:nth-of-type(2){margin-right: 240px;}
+.footer .company_info span:first-of-type img{margin-top: 20px; margin-bottom:20px;}
+.footer .etc{margin: auto; width: 980px; padding-top: 15px;}
+.footer .etc span{color: #6C6C6C;}
+</style>
+</head>
+<body>
+	<div id="top">
+	<header id = "gnb">
+		<span id="logo"><img src="../images/logo.png"/></span>
+		<ul id="header">
+			<li><a href="">제품</a></li>
+			<li><a href="">적용분야</a></li>
+			<li><a href="">고객지원</a></li>
+			<li><a href="">회사소개</a></li>
+			<li><a href="">투자정보</a></li>
+			<li><a href="">채용</a></li>
+		</ul>
+		<span id="lang">
+			<select id="language" style="">
+				<option>KOR</option>
+				<option>ENG</option>
+				<option>CHN</option>
+			</select>
+		</span>
+	</header>
+	<div id = "gnb_list">
+		<ul class="first">
+			<li><a href="">Analog Sensor</a></li>
+			<li><a href="">Digital Sensor</a></li>
+			<li><a href="">Medical Sensor</a></li>
+			<li><a href="">Companion Chip</a></li>
+			<li><a href="">System on a Chip</a></li>
+		</ul>
+		<ul>
+			<li><a href="">Security&Surveilance</a></li>
+			<li><a href="">Automotive</a></li>
+			<li><a href="">Medical</a></li>
+			<li><a href="">Biometrics</a></li>
+			<li><a href="">Others</a></li>
+		</ul>
+		<ul>
+			<li><a href="">고객문의</a></li>
+			<li><a href="">FAQ</a></li>
+		</ul>
+		<ul>
+			<li><a href="">픽셀플러스는</a></li>
+			<li><a href="">CI</a></li>
+			<li><a href="">R&D</a></li>
+			<li><a href="">글로벌 네트워크</a></li>
+			<li><a href="">뉴스</a></li>
+		</ul>
+		<ul>
+			<li><a href="">공시/공고</a></li>
+			<li><a href="">재무정보</a></li>
+			<li><a href="">IR 자료실</a></li>
+			<li><a href="">주가정보</a></li>
+		</ul>
+		<ul>
+			<li><a href="">입사가이드</a></li>
+			<li><a href="">채용공고</a></li>
+		</ul>
+	</div>
+	</div>
+	
+	<div class="contents">
+		<div class="tab">
+			<h1>제품</h1>
+			<ul class="tab_list">
+				<li class="on"><a href="">Analog Sensor</a></li>
+				<li><a href="">Digital Sensor</a></li>
+				<li><a href="">Medical Sensor</a></li>
+				<li><a href="">Companion Chip</a></li>
+				<li><a href="">System on a Chip</a></li>
+			</ul>
+		</div>
+		<div class="product_list">
+			<h3>Analog Sensor</h3>
+			<ul class="product_type">
+				<li class="update">업데이트 제품</li>
+				<li class="best">베스트 제품</li>
+				<li class="new">신제품</li>
+			</ul>
+			
+			<div class="product_table">
+				<table>
+					<caption></caption>
+							<colgroup>
+								<col width="">
+								<col width="9%">
+								<col width="9%">
+								<col width="9%">
+								<col width="9%">
+								<col width="11%">
+								<col width="11%">
+								<col width="12%">
+								<col width="10%">
+								<col width="10%">
+							</colgroup>
+							<thead>
+								<tr class="title_tr">
+									<th scope="col" class="first">Product Type</th>
+									<th scope="col" class="">Part Number</th>
+									<th scope="col" class="">Part Status</th>
+									<th scope="col" class="">Res,</th>
+									<th scope="col" class="">Optical Format</th>
+									<th scope="col" class="">Pixel Size(㎛)</th>
+									<th scope="col" class="">Frame Rate(fps)</th>
+									<th scope="col" class="">Output</th>
+									<th scope="col" class="">Package</th>
+									<th scope="col" class="last">Brief Shee</th>
+								</tr>
+							</thead>
+							<tbody class="product_body">
+								<tr>
+									<td>Analog</td>
+									<td>PC1030N</td>
+									<td>Production</td>
+									<td>648*488</td>
+									<td>1/4"</td>
+									<td>5.55*5.55</td>
+									<td>60</td>
+									<td>NTS/PAL</td>
+									<td>CLCC</td>
+									<td><img src="../../images/web_product/app_ico.png" alt="" /></td>
+								</tr>
+								<tr>
+									<td>Analog</td>
+									<td>PC7030K</td>
+									<td>Production</td>
+									<td>648*488</td>
+									<td>1/4"</td>
+									<td>5.6*5.6</td>
+									<td>60</td>
+									<td>NTS/PAL</td>
+									<td>CLCC</td>
+									<td><img src="../images/web_product/app_ico.png" alt="" /></td>
+								</tr>
+								<tr>
+									<td>Analog</td>
+									<td>PC9030K</td>
+									<td>Sample</td>
+									<td>712*552</td>
+									<td>1/4"</td>
+									<td>5.6*5.6</td>
+									<td>60</td>
+									<td>NTS/PAL</td>
+									<td>CLCC/CSP</td>
+									<td><img src="../images/web_product/app_ico.png" alt="" /></td>
+								</tr>
+								<tr>
+									<td>Analog</td>
+									<td>PC3030K</td>
+									<td>Production</td>
+									<td>648*488</td>
+									<td>1/3.7"</td>
+									<td>6.0*6.0</td>
+									<td>60</td>
+									<td>NTS/PAL</td>
+									<td>CLCC</td>
+									<td><img src="../images/web_product/app_ico.png" alt="" /></td>
+								</tr>
+								<tr>
+									<td>Analog</td>
+									<td>PC6030K</td>
+									<td>Production</td>
+									<td>648*488</td>
+									<td>1/3.7"</td>
+									<td>6.0*6.0</td>
+									<td>60</td>
+									<td>NTS/PAL</td>
+									<td>CLCC/im2BGA</td>
+									<td><img src="../images/web_product/app_ico.png" alt="" /></td>
+								</tr>
+								<tr class="new">
+									<td>Analog</td>
+									<td><img src="../images/web_product/pro_ico_new2.gif" style="margin-right: 48px;"/><span>PC6060K</span></td>
+									<td>Production</td>
+									<td>648*488</td>
+									<td>1/3.7"</td>
+									<td>6.0*6.0</td>
+									<td>60</td>
+									<td>NTS/PAL</td>
+									<td>CLCC</td>
+									<td><img src="../images/web_product/app_ico.png" alt="" /></td>
+								</tr>
+								<tr class="new best update">
+									<td>Analog</td>
+									<td>
+										<img src="../images/web_product/pro_ico_new2.gif"/>
+										<img src="../images/web_product/pro_ico_best2.gif"/>
+										<img src="../images/web_product/pro_ico_update2.gif" style="margin-right:22px;"/>
+										<span>PC6070K</span>
+									</td>
+									<td>Production</td>
+									<td>648*488</td>
+									<td>1/3.7"</td>
+									<td>6.0*6.0</td>
+									<td>60</td>
+									<td>NTS/PAL</td>
+									<td>CLCC</td>
+									<td><img src="../images/web_product/app_ico.png" alt="" /></td>
+								</tr>
+								<tr class="best update">
+									<td>Analog</td>
+									<td>
+										<img src="../images/web_product/pro_ico_best2.gif"/>
+										<img src="../images/web_product/pro_ico_update2.gif" style="margin-right: 34px;"/>
+										<span>PC1089K</span>
+									</td>
+									<td>Production</td>
+									<td>728*488</td>
+									<td>1/3"</td>
+									<td>6.35*7.4</td>
+									<td>60</td>
+									<td>NTS/PAL</td>
+									<td>CLCC</td>
+									<td><img src="../images/web_product/app_ico.png" alt="" /></td>
+								</tr>
+								<tr>
+									<td>Analog</td>
+									<td>PX2089K</td>
+									<td>Production</td>
+									<td>756*504</td>
+									<td>1/3"</td>
+									<td>6.35*7.4</td>
+									<td>60</td>
+									<td>NTS/PAL</td>
+									<td>CLCC</td>
+									<td><img src="../images/web_product/app_ico.png" alt="" /></td>
+								</tr>
+								<tr>
+									<td>Analog</td>
+									<td>PC3089K</td>
+									<td>Production</td>
+									<td>756*504</td>
+									<td>1/3"</td>
+									<td>6.35*7.4</td>
+									<td>60</td>
+									<td>NTS/PAL</td>
+									<td>CLCC</td>
+									<td><img src="../images/web_product/app_ico.png" alt="" /></td>
+								</tr>
+								<tr>
+									<td>Analog</td>
+									<td>PC1099K</td>
+									<td>Production</td>
+									<td>976*496</td>
+									<td>1/3"</td>
+									<td>5.0*7.4</td>
+									<td>60</td>
+									<td>NTS/PAL</td>
+									<td>CLCC</td>
+									<td><img src="../images/web_product/app_ico.png" alt="" /></td>
+								</tr>
+							</tbody>
+					</table>
+			</div>
+		</div>
+		<div class="contact_area">
+			<h3>Contact Us</h3>
+			<span>모든 픽셀 플러스 제품에 관해 Contact Us를 통해 문희사항을 보내주시면 최대한 빠르게 답변해 드리겠습니다.</span>
+			<a href="">Go</a>
+		</div>
+	</div>
+	
+	<div class="footer">
+		<div class="company_info">
+			<span><img src="../images/web_bottom/black_logo.png"/></span>
+			<span>443-270 경기도 수원시 영통구 광교로 105 (이의동, 경기알앤디비센터 6층)</span>
+			<span><img src="../images/web_bottom/t_ico.png"/> 82-31-888-5300</span>
+			<span><img src="../images/web_bottom/f_ico.png"/> 82-31-888-5399</span>
+		</div>
+		<div class="etc">
+			<span>Copyright ⓒ PixelPlus, All rights reserved.</span>
+		</div>
+	</div>
+</body>
+</html>
