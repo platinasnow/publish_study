@@ -10,9 +10,9 @@ body,html{height: 100%;overflow: hidden}
 .header .language-wrap select{margin-top:30%;padding: 5% 8%;}
 
 .contents img{width:100%;}
-.contents ul{overflow: hidden;border-top: 1px solid #aaa; }
-.contents ul li{float:left;width: 33.1%;font-size: 16px;font-weight: bold;text-align: center;padding: 6% 0;border-left: 1px solid #c4c4c4;background: url(../menu_bottom_back.png);}
-.contents ul li:FIRST-CHILD{border-left: 0px solid #c4c4c4;}
+.contents ul.btn{overflow: hidden;border-top: 1px solid #aaa; }
+.contents ul.btn li{float:left;width: 33.1%;font-size: 16px;font-weight: bold;text-align: center;padding: 6% 0;border-left: 1px solid #c4c4c4;background: url(../menu_bottom_back.png);}
+.contents ul.btn li:FIRST-CHILD{border-left: 0px solid #c4c4c4;}
 .footer img{width:100%;}
 
 .cover{position:absolute;left:0;top:0;width:100%;height:100%;z-index: 50;background: #000;opacity:0.33;}
