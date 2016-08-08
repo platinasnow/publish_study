@@ -18,7 +18,7 @@ body{overflow-y: scroll;}
 .contents .board table tbody tr td ul li{display: inline-block;margin: 0 1px;}
 .contents .board table tbody tr.opener td{background-color: #f5f5f5;padding: 5% 7%;}
 .contents .board table tbody tr.opener td dl{text-align: left;background-color: #dbecff;}
-.contents .board table tbody tr.opener td dl dt{display: inline-block;width:35%;padding: 7px 11%;color: #0073E8;border-bottom: 1px solid #fff;}
+.contents .board table tbody tr.opener td dl dt{display: inline-block;width:36%;padding: 7px 11%;color: #0073E8;border-bottom: 1px solid #fff;}
 .contents .board table tbody tr.opener td dl dd{display: inline-block;border-bottom: 1px solid #fff;padding: 7px 0;width:40%;}
 .contents .board table tbody tr.opener td dl dt:LAST-CHILD{}
 .contents .board table tbody tr.opener td img{width:80%;margin-top: 10px;}
