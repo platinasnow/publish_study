@@ -1,0 +1,58 @@
+- CSS 추가 규칙
+
+1. @import
+ - 스타일시트 내부에서 스타일시트를 추가 할때 사용
+
+ex) 
+<style>
+@import url('reset.css');
+</style>
+
+
+2. @font-face
+ - 웹 폰트를 생성할 때 사용하는 규칙
+
+ex) 
+
+@font-face{
+  font-family : 'ABC' //아무렇게나 해도 됨.
+  src : url('NanumGothic.eot'), url('NanumGothic.ttf'), url('NanumGothic.woff');
+}
+body{
+ font-family : 'ABC' //위에서 지어준 폰트 이름을 사용.
+}
+
+
+
+3. @media
+ - 장치에 따라서 css를 다르게 줄 때 사용.
+
+
+ex)
+ <link rel="stylesheet" href="desktop.css" media="screen" />
+ <link rel="stylesheet" href="print.css" media="print" />
+
+or
+
+<style>
+@media screen{
+ html{
+  ...
+ }
+}
+
+@media print{
+ html{
+  ...
+ }
+}
+
+
+</style>
+
+
+4. 반응형 웹
+
+5. 화면 방향전환
+
+
