@@ -1,0 +1,89 @@
+CSS3 변형과 애니메이션 (9장)
+
+  변형 속성과 애니메이션 속성
+    : 대부분 익스9 이하의 브라우저에서는 지원하지 않는 기능. (구형 브라우저와 호환시 벤더 프리픽스를 사용해야함)
+    HTML5 앱 또는 크롬 앱 에서는 적용가능.
+
+     *변형속성
+      : ex) 변형되는 상태에 대해 부드러운 애니메이션을 적용할 때 필요한 기능
+
+      - transition 속성
+          transition                         :모든 transition 속성을 한 번에 사용
+          transition-delay                :이벤트 발생 후 몇 초 후에 재생할지 지정
+          transition-duration            :몇 초 동안 재생할지 지정
+          transition-property            :어떤 속성을 변형할지 지정
+          transition-timing-function   :수치 변형 함수를 지정   
+ 
+     *애니메이션 속성
+      : CSS3은 애니메이션 속성을 지원.
+      : @keyframes 규칙과 함께 사용한다.
+          
+     -animation 속성
+          animation                           :모든 animation 속성을 한 번에 적용
+          animation-delay                  :이벤트 발생 후 몇 초 후에 재생할지 지정
+          animation-direction              :애니메이션 진행 방향을 설정
+          animation-duration              :애니메이션을 몇 초 동안 재생할지 지정
+          animation-iteration-count     :애니메이션 반복 횟수 지정
+          animation-name                  :애니메이션 이름을 지정
+          animation-play-state            :애니메이션 재생 상태를 지정
+          animation-timing-function     :수치 변형 함수를 지정
+      ex)
+          #box {
+                    position : absolute;
+                    width : 200px; height : 200px;
+                    border-radius : 100px;
+                    text-align : center;
+                    background : linear-gradient(#cb60b3 0%, #db36a4 100%);
+
+                    animation-name : rint; (애니메이션 이름)
+                    animation-duration : 2s; (애니메이션 재생 지속시간 설정)
+                    animation-timing-function : linear;  (수치 변형 함수 : 직선)
+          }
+
+          @keyframes rint {
+                  from { left:0; transform:rotate(0deg); }
+                  50% { left:500px; }
+                  to { left:500px; transform:rotate(360deg); }
+          }
+
+
+
+CSS3 변환 (10장)
+  
+  *화면 좌표
+
+  - 2차원 변환  (x, y)
+          -transform 속성
+              translate(translateX, translateY)                          :특정한 크기만큼 이동
+              translateX(translateX)                                        :X축으로 특정한 크기만큼 이동
+              translateY(translateY)                                        :Y축으로 특정한 크기만큼 이동
+              scale(scaleX,  scaleY)                                         :특정한 크기만큼 확대 및 축소
+              scaleX(scaleX)                                                  :X축으로 특정한 크기만큼 확대 및 축소
+              scaleY(scaleY)                                                   :Y축으로 특정한 크기만큼 확대 및 축소
+              skew(angleX, angleY)                                         :특정한 각도만큼 기울임
+              skewX(angleX)                                                  :X축으로 특정한 각도만큼 기울임
+              skewY(angleY)                                                   :Y축으로 특정한 각도만큼 기울임
+              rotate(angleZ)                                                   :특정한 각도만큼 회전
+          
+               ex) transform: rotate(60deg);
+          
+  - 3자원 변환  (x, y, z)
+          -transform 속성
+              translate3d(translateX, translateY, translateZ)     :특정한 크기만큼 이동
+              translateX(translateX)                                        :X축으로 특정한 크기만큼 이동
+              translateY(translateY)                                        :Y축으로 특정한 크기만큼 이동
+              translateZ(translateZ)                                        :Z축으로 특정한 크기만큼 이동
+              scale3d(scaleX,  scaleY, scaleZ)                          :특정한 크기만큼 확대 및 축소
+              scaleX(scaleX)                                                  :X축으로 특정한 크기만큼 확대 및 축소
+              scaleY(scaleY)                                                   :Y축으로 특정한 크기만큼 확대 및 축소
+              scaleZ(scaleZ)                                                   :Z축으로 특정한 크기만큼 확대 및 축소
+              rotate3d(angleX, angleY, angleZ)                        :특정한 각도만큼 회전
+              rotateX(angleX)                                                :X축으로 특정한 각도만큼 회전
+              rotateY(angleY)                                                 :Y축으로 특정한 각도만큼 회전
+              rotateZ(angleZ)                                                 :Z축으로 특정한 각도만큼 회전
+
+         -backface-visibility 속성
+               visible : 후면을 보이게 만듬
+               hidden : 후면을 보이지 않게 만듬
+         -perspective 속성
+               원근감 조정
