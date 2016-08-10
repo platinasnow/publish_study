@@ -28,18 +28,21 @@
 .contents .product_list{width: 1260px; margin: auto;}
 .contents .product_list h3{font-weight: bold; font-size: 22px; padding-top: 50px; margin-top: 45px; text-align: center; background: url("../images/web_product/tit_top_bar.png") no-repeat; background-position: center;}
 .contents .product_list .product_type {margin-left: 155px; margin-top: 40px; height: 24px; width: 980px; text-align: right;}
-.contents .product_list .product_type li{float: right; padding-left: 23px;  padding-right: 12px;}
-.contents .product_list .product_type .new{background: url("../images/web_product/pro_ico_new.gif") no-repeat;}
-.contents .product_list .product_type .best{background: url("../images/web_product/pro_ico_best.gif") no-repeat;}
-.contents .product_list .product_type .update{background: url("../images/web_product/pro_ico_update.gif") no-repeat;}
+.contents .product_list .product_type li{display: inline-block; padding-left: 23px;  padding-right: 12px;}
+.contents .product_list .product_type li span{vertical-align: middle;}
+.contents .product_list .product_type .new{background: url("../images/web_product/pro_ico_new.gif") no-repeat; height: 21px;}
+.contents .product_list .product_type .best{background: url("../images/web_product/pro_ico_best.gif") no-repeat; height: 21px;}
+.contents .product_list .product_type .update{background: url("../images/web_product/pro_ico_update.gif") no-repeat; height: 21px;}
 
 .contents .product_list .product_table{width: 980px; margin: auto; margin-left: 155px;}
 .contents .product_list .product_table .title_tr{font-size: 13.1px; color: white; background: url("../images/web_product/board_back.png"); height: 47px;}
 .contents .product_list .product_table .title_tr th{border-right: 1px solid white;}
-.contents .product_list .product_table .title_tr .first{background: url("../images/web_product/board_first.png"); }
+.contents .product_list .product_table .title_tr .first{background: url("../images/web_product/board_first.png");}
 .contents .product_list .product_table .title_tr .last{background: url("../images/web_product/board_last.png"); background-size: cover;}
 .contents .product_list .product_table .product_body tr{height: 55px; text-align: center; border-bottom: 1px solid #CDE2F7;}
 .contents .product_list .product_table .product_body tr:last-of-type{border-bottom: 2px solid #016DDC;}
+.contents .product_list .product_table .product_body tr td .pro_ico{text-align: left; padding: 0px 15px;}
+.contents .product_list .product_table .product_body tr td .pro_ico li{display: inline-block;}
 
 .contents .contact_area {height: 200px; margin: auto; text-align: center; margin-top: 100px;}
 .contents .contact_area h3{font-weight: bold; font-size: 20px; margin-bottom: 15px;}
@@ -48,6 +51,8 @@
 
 .footer{height: 180px; margin: auto; background-color: #373737; width: 100%;}
 .footer .company_info{height: 110px; margin: auto; width: 980px; border-bottom: 1px solid #6C6C6C;}
+.footer .company_info .t_ico img{vertical-align: middle; padding-bottom: 3px;}
+.footer .company_info .f_ico img{vertical-align: middle; padding-bottom: 3px;}
 .footer .company_info span{color: #6C6C6C; font-weight: bold;}
 .footer .company_info span:first-of-type{display:block; }
 .footer .company_info span:last-of-type{margin-left: 30px;}
@@ -130,9 +135,9 @@
 		<div class="product_list">
 			<h3>Analog Sensor</h3>
 			<ul class="product_type">
-				<li class="update">업데이트 제품</li>
-				<li class="best">베스트 제품</li>
-				<li class="new">신제품</li>
+				<li class="new"><span>신제품</span></li>
+				<li class="best"><span>베스트 제품</span></li>
+				<li class="update"><span>업데이트 제품</span></li>
 			</ul>
 			
 			<div class="product_table">
@@ -175,7 +180,7 @@
 									<td>60</td>
 									<td>NTS/PAL</td>
 									<td>CLCC</td>
-									<td><img src="../../images/web_product/app_ico.png" alt="" /></td>
+									<td><img src="../images/web_product/app_ico.png" alt="" /></td>
 								</tr>
 								<tr>
 									<td>Analog</td>
@@ -227,7 +232,12 @@
 								</tr>
 								<tr class="new">
 									<td>Analog</td>
-									<td><img src="../images/web_product/pro_ico_new2.gif" style="margin-right: 48px;"/><span>PC6060K</span></td>
+									<td>
+										<ul class="pro_ico">
+											<li><img src="../images/web_product/pro_ico_new2.gif" /></li>
+										</ul>
+										<span>PC6060K</span>
+									</td>
 									<td>Production</td>
 									<td>648*488</td>
 									<td>1/3.7"</td>
@@ -240,9 +250,11 @@
 								<tr class="new best update">
 									<td>Analog</td>
 									<td>
-										<img src="../images/web_product/pro_ico_new2.gif"/>
-										<img src="../images/web_product/pro_ico_best2.gif"/>
-										<img src="../images/web_product/pro_ico_update2.gif" style="margin-right:22px;"/>
+										<ul class="pro_ico">
+											<li><img src="../images/web_product/pro_ico_new2.gif"/></li>
+											<li><img src="../images/web_product/pro_ico_best2.gif"/></li>
+											<li><img src="../images/web_product/pro_ico_update2.gif"/></li>
+										</ul>
 										<span>PC6070K</span>
 									</td>
 									<td>Production</td>
@@ -257,8 +269,10 @@
 								<tr class="best update">
 									<td>Analog</td>
 									<td>
-										<img src="../images/web_product/pro_ico_best2.gif"/>
-										<img src="../images/web_product/pro_ico_update2.gif" style="margin-right: 34px;"/>
+										<ul class="pro_ico">
+											<li><img src="../images/web_product/pro_ico_best2.gif"/></li>
+											<li><img src="../images/web_product/pro_ico_update2.gif"/></li>
+										</ul>
 										<span>PC1089K</span>
 									</td>
 									<td>Production</td>
@@ -321,8 +335,8 @@
 		<div class="company_info">
 			<span><img src="../images/web_bottom/black_logo.png"/></span>
 			<span>443-270 경기도 수원시 영통구 광교로 105 (이의동, 경기알앤디비센터 6층)</span>
-			<span><img src="../images/web_bottom/t_ico.png"/> 82-31-888-5300</span>
-			<span><img src="../images/web_bottom/f_ico.png"/> 82-31-888-5399</span>
+			<span class="t_ico"><img src="../images/web_bottom/t_ico.png"/> 82-31-888-5300</span>
+			<span class="f_ico"><img src="../images/web_bottom/f_ico.png"/> 82-31-888-5399</span>
 		</div>
 		<div class="etc">
 			<span>Copyright ⓒ PixelPlus, All rights reserved.</span>
