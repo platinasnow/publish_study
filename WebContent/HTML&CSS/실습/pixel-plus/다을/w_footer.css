@@ -1,0 +1,12 @@
+@CHARSET "EUC-KR";
+.footer{height: 180px; margin: auto; background-color: #373737; width: 100%;}
+.footer .company_info{height: 110px; margin: auto; width: 980px; border-bottom: 1px solid #6C6C6C;}
+.footer .company_info .t_ico img{vertical-align: middle; padding-bottom: 3px;}
+.footer .company_info .f_ico img{vertical-align: middle; padding-bottom: 3px;}
+.footer .company_info span{color: #6C6C6C; font-weight: bold;}
+.footer .company_info span:first-of-type{display:block; }
+.footer .company_info span:last-of-type{margin-left: 30px;}
+.footer .company_info span:nth-of-type(2){margin-right: 240px;}
+.footer .company_info span:first-of-type img{margin-top: 20px; margin-bottom:20px;}
+.footer .etc{margin: auto; width: 980px; padding-top: 15px;}
+.footer .etc span{color: #6C6C6C;}
