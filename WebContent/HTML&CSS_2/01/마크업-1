@@ -37,7 +37,7 @@
        <img src="imgaes/portrait.png" alt="a portrait of the artist as a middle aged developer"/>   
 
      DOCTYPE (문서타입)
-     :DOCTYPE 선언은 문서가 사용하고 있는 마크업 언어, 버전, 구문 규칙 준수 범위 등을 브라우젖에게 넘겨준다.
+     :DOCTYPE 선언은 문서가 사용하고 있는 마크업 언어, 버전, 구문 규칙 준수 범위 등을 브라우저에게 넘겨준다.
      >모든 HTML 파일의 시작 부분에 HTML 문서의 타입을 선언한다.
 
      구문 규칙 준수 기준 3가지
