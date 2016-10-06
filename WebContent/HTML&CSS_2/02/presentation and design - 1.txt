@@ -1,0 +1,128 @@
+프레젠테이션과 디자인
+
+
+ ※CSS란? HTML 마크업 문서의 요소를 화면에 어떤 모습으로 출력할지 서술하는 언어.
+
+
+
+1. HTML(컨텐트)와 CSS(디자인)을 분리하는 이유
+
+- 마크업 컨텐트에서 디자인 요소를 분리하면 다수의 사람이 한 웹 사이트를 개발할 수 있음.
+- 마크업은 수정하지 않고 디자인만 수정하면 되기에 유지보수에 편리.
+- 마크업 요소 비율이 늘어나면 검색엔진이 정보를 가져가기 쉬워져 검색 효과가 증가.
+- 보기에 편함.
+- 용량이 훨씬 작아서 사이트 성능 향상에 도움.
+
+
+
+
+2. CSS를 사용하는 방법
+
+1) 인라인 스타일
+
+<div style="border:1px solid #eee"></div>
+
+
+2) 내장 css
+<style>
+ div{border:1px solid #eee} 
+</style>
+
+
+3) 외부 css 파일에 링크
+
+<link rel="stylesheet" href="style/test.css" type="text/css" />
+
+※ 3번 방법을 가장 선호함. HTML과 CSS를 분리하여 유지보수 및 관리가 용이함.
+※ CSS 적용 우선도는 1> 2> 3 
+
+
+
+
+3. 선택자
+- 어떤 HTML 마크업에 접근하여 디자인을 변경할지 선택하는 요소.
+
+-----------------------------------
+<div class="block">
+   <p>123</p>
+   <div class="line1 on">1</div>
+   <div class="line1">2</div>
+   <div id="link">
+      <div class="child">3</div>
+   </div>
+</div>
+------------------------------------
+
+- 태그 선택자 : div{width:100px}, p{font-size:14px}  
+- 클래스 선택자 .line1{width:100px}, .block p{width:100px} -> .line, .block div{width:100px;}
+                .line1.on{color: red;}
+- 아이디 선택자 : #link{font-size:14px}   
+
+※ CSS의 적용 우선도는 id > class > tag 이며, 선택자가 많아질수록 우선도가 높아짐.
+ex) .line1.on > .line 
+
+
+- 하위선택자
+ 부모 아래의 자식들 전체를 선택 
+ ex) .block div => .block 클레스 안의 모든 div
+
+
+- 자식선택자
+ 부모 바로 아래의 자식만을 선택
+ ex) .block>div => .block 클레스 안의 div, .child 같은 경우는 제외.
+  
+
+
+
+
+4. 글꼴 스타일
+- color(글자 색상) : #eee, #f0f0f0, red ...
+- font-family(글꼴) : Arial, serif ...
+- font-size(글자크기) : 14px, 15em, 200% ...
+- font-weight(글자두께): bold, normal, 100,200,900 ...
+- font-style(글자스타일): normal, italic, oblique ...
+- text-decoration(글자장식): underline, overline, line-through, blink, none 
+
+px, em, %
+- px = 고정 1px
+- em = 글꼴의 높이 ex) 12px 글꼴을 쓴다면 1em = 12px
+- % = 보통 글꼴 크기의 n%
+
+
+글자정렬
+- text-align : left, right, center, justify
+
+라인 높이
+- line-height : %
+
+글자 또는 단어의 간격
+- letter-spacing : px, em (글자간격)
+- word-spacing : px, em (단어간격)
+
+
+들여쓰기
+- text-indent : px, em
+
+
+
+5. 배경
+
+- margin : 테두리를 기준으로 바깥부분
+- padding : 테두리를 기준으로 안부분
+- background-color(배경색상) : #eee, red  ... 
+- backgorund-image(배경이미지) : url("./images/shadow.png") ;
+- background-repeat(배경반복) : repeat, no-repeat, repeat-x, repeat-y
+- background-position(배경위치): top, center, bottom,  left, right, 5px, 10% ..
+- background-attach(배경스크롤): fix, scroll
+
+약식지정
+- background : url("./images/shadow.png") repeat-y top right;
+
+
+
+
+
+
+
+
+
