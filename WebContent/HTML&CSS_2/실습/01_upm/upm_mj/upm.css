@@ -31,6 +31,12 @@
    float: right;
    text-align: right;
 }
+.header .top .user li {
+    float: left;
+    padding-top: 0;
+    margin-left: 12px;
+    color: #474747;
+}
 .header .top .user li span.count a{
 	 border-radius: 7px;
    color: #fff;
@@ -38,6 +44,21 @@
    padding: 4px 8px;
    font-weight: bold;
    font-size: 13px;
+}
+.header .top .user li.photo-wrap {
+    padding: 0 5px 0 0;
+    margin-left: 0;
+}
+.header .top .user li.photo-wrap div span.photo {
+    overflow: hidden;
+    width: 54px;
+    height: 54px;
+    margin-right: 15px;
+    border-radius: 27px;
+    background: #ddd;
+}
+.header .top .user li.photo-wrap div span.photo img{
+    width: 54px;
 }
 
 
