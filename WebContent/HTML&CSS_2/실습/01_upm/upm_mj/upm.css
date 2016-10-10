@@ -1,0 +1,48 @@
+@CHARSET "EUC-KR";
+
+.header{
+	height:90px; 
+	border:1px solid #eee;
+}
+.home{
+	width:140px;
+	height:90px; 
+	float:left;
+	background-color: #eb1e3c;
+}
+.home .logo{
+	padding-top:25px;
+	padding-left:20px;
+}
+.header .top{
+	height:70px;
+	padding: 20px 50px 0 20px;
+	margin-left:140px;
+	background: #f7f7f7;
+	font-size:12px;
+	/* border:1px solid #111; */
+	}
+.header .top .txt{
+	padding: 14px 0 0 20px;
+	background: url("../imgs/pan_icon.png") no-repeat 0 9px;
+	color: #a4a4a4;
+}
+.header .top .user{
+   float: right;
+   text-align: right;
+}
+.header .top .user li span.count a{
+	 border-radius: 7px;
+   color: #fff;
+   background-color: #eb1e3c;
+   padding: 4px 8px;
+   font-weight: bold;
+   font-size: 13px;
+}
+
+
+
+
+
+
+
