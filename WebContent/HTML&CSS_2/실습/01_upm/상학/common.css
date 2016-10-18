@@ -7,7 +7,7 @@ html,body{font-size:12px;}
 .gnb .right-gnb .message-count{float:left;background: #eb1e3c;padding: 5px 4px 3px;border-radius:7px;width:14px;text-align: center;margin-top:15px;}
 .gnb .right-gnb .message-count a{color: #fff;}
 .gnb .right-gnb .profile {float:left;margin:0 12px 0 8px;}
-.gnb .right-gnb .profile .profile-img{display:inline-block;width:50px;height:50px;margin-right:10px;border-radius:20px;background: url('../imgs/noimage.png') round;}
+.gnb .right-gnb .profile .profile-img{display:inline-block;width:50px;height:50px;margin-right:10px;border-radius:20px;background: url('../imgs/noimage.png') 56px;background-size:130%;}
 .gnb .right-gnb .profile div{display:inline-block;vertical-align: 15px;}
 .gnb .right-gnb .menu{float:left;margin-top:15px;}
 .gnb .right-gnb .menu li{display: inline-block;padding: 5px;}
