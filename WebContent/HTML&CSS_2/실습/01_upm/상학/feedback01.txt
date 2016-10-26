@@ -1,0 +1,37 @@
+1. 글에 일정길이 이후 ... 으로 처리 하도록 함.
+
+overflow:hidden; -> 글이 넘어가면 숨김
+text-overflow:ellipsis; -> 글이 넘어가면 ...으로 표기
+white-space:nowrap; -> 글을 한줄로 표기하도록 함.
+
+overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+
+
+2. 영역 설정
+ - HTML은 위에서 아래로 출력이 되기 때문에 영역을 나눌때도 가로 전체를 포함하는 큰 통을 준비하고, 그 안에 다시 영역을 분배하는 것이 좋음.
+
+
+
+3.:AFTER, :BEFORE 등의 pseudo class
+
+ - 시멘틱하며 관리하기 편하고 유용하지만, 브라우저에 따라서 퍼포먼스에 영향을 줄 수 있음.
+ - IE 6~7 버전들에서 지원되지 않아 호환성에 문제가 있음.
+ 
+https://www.quora.com/Is-the-first-child-CSS-pseudo-class-better-than-adding-a-class-to-the-first-element
+http://csswizardry.com/2011/09/writing-efficient-css-selectors/
+
+
+4. 화살표 그리기
+
+ - 사각형 + 삼각형의 트릭으로 생성.
+ - border-color:transparent transparent transparent #색상; 를 이용하면 원하는 방향으로 삼각형을 그릴 수 있음.
+
+li{background:#3F84E0;width:4px;height:4px;display: inline-block;}
+
+li span{border-color:transparent transparent transparent #3F84E0;width:0px;height:0px;display:inline-block;border-style:solid; border-width:4px 6px;vertical-align: middle;}
+
+
+5. <img />와 background:url();
+
+ - 컨텐츠를 보여줘야 하는 요소들에 대해서는 <img /> 태그를 사용
+ - 장식적인 요소인 것들은 background:url(); css를 사용
