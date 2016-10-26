@@ -1,0 +1,18 @@
+* upm- 실습 1  개선사항
+
+ - css 는 외부링크로 파일을 분리하는 것이 가시적 측면, 유지보수적 측면에서 모두 좋음..?
+ - 불필요한 footer 영역 삭제
+ - 링크 요소가 아닌 background 역할의 image는 background-image로 변경 > 돔 스크립트 로드 속도 개선
+ - before, after 문자 서식 수정 (size 조절)
+ - header 레이아웃 수정 (min-width)값 조정
+
+ - content 영역 스크롤바 생성
+ - gnb의 li 요소중 사진과, 이름 노출 부분은 별도로 묶어서 처리 : 시맨틱한 코딩
+ - lnb 요소 이미지와 글자에 a태그 걸리도록 수정 : 사용자 편의
+ - header 메인 로고 옆 텍스트는 p태그로 처리 : 시맨틱한 코딩
+
+ - text-overflow 적용하고자 했으나.. AFTER > 
+
+
+ - float 속성 해제
+ http://webjin85.tistory.com/entry/CSS-Float%EB%A5%BC-Clear%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
