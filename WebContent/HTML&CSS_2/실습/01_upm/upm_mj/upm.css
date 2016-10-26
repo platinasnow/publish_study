@@ -3,7 +3,9 @@
 	height: 100%;
 }
 .header{
-	height:90px; 
+	height:90px;
+	width:100%;
+	min-width: 1024px; 
 }
 .home{
 	width:140px;
@@ -28,34 +30,38 @@
 	background: url("../imgs/pan_icon.png") no-repeat 0 3px;
 	color: #a4a4a4;
 }
-.header .top .user{
+ .header .top .top_menu{
    float: right;
    text-align: right;
 }
-.header .top .user li {
+
+.header .top .top_menu .user li {
     float: left;
     padding-top: 16px;
-    margin-left: 12px;
+    margin-left: 13px;
     color: #474747;
 }
-.header .top .user li span.count a{
+.header .top .top_menu .photo-wrap .count a{
+	 float: left;
 	 border-radius: 7px;
    color: #fff;
    background-color: #eb1e3c;
+   margin: 10px 0px;
    padding: 4px 8px;
    font-weight: bold;
    font-size: 13px;
 }
-.header .top .user li.photo-wrap {
-    padding: 0 5px 0 0;
+.header .top .top_menu .photo-wrap {
+		margin-right: 15px;
+    padding: 0 160px 0 0;
     margin-left: 0;
 }
-.header .top .user li.photo-wrap > div span {
+.header .top .top_menu .photo-wrap span {
     display: block;
     float: left;
     font-size: 12px;
 }
-.header .top .user li.photo-wrap .photo {
+.header .top .top_menu .photo-wrap .photo {
   overflow: hidden;
   width: 54px;
   height: 54px;
@@ -63,24 +69,25 @@
   border-radius: 27px;
   background: #ddd;
 }
-.header .top .user li.photo-wrap div span.photo img{
+.header .top .top_menu .photo-wrap .photo img{
 	width: 54px;
 }
-.header .top .user li.photo-wrap div span.user_info{
+.header .top .top_menu .photo-wrap .user_info{
 	padding-top:22px;
 }
-.header .top .user li.photo-wrap div span.user_info span{
+.header .top .top_menu .photo-wrap .user_info span{
 	display: inline-block;
   padding-right: 5px;
   margin-right: 5px;
   border-right: 1px solid #acb2b7;
-}
+} /**/
 .container{
   position: absolute;
   left: 0;
   top: 90px;
   bottom: 0;
-  width: 100%;	
+  width: 100%;
+  min-width: 1024px; 
 }
 .container .menu {
 	width: 140px;
