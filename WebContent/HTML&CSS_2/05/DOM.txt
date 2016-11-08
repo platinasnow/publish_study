@@ -1,0 +1,194 @@
+5장. DOM
+
+ DOM(Document Object Model)
+
+	1. 문서를 객체로 표현하기 위한 표준으로서 HTML이나 XML등의 문서를 객체로 표현할 때 사용 하는 API.
+	2. 문서의 객체 모델(Document Object Model)은 HTML내에 들어 있는 요소를 구조화 객체 모델로 표현 하는 양식.
+	3. DOM은 HTML과 XML문서에 대하여, 이들 문서의 구조적인 표현방법을 제공하며 어떻게 하면 스크립트를 이용하여 이러한 구조에 접근할 수 있는지를 정의하는 API.
+	
+	위 3가지중 이해가 잘 되는 말을 골라 사용 하면 된다.
+	 ex) <ul><li></li></ul>  (구조화된 문서) : ul과 li는 부모/자식 관계이다  (구조적 표현 방식 제공)
+
+ DOM 계층 구조
+
+     HTML 문서는 순수 텍스트로만 작성되며 브라우저는 이 텍스트를 브라우저에서 사용할 수 있는 모델 형태로 변환한다.
+     이때, 변환되는 모델의 표준화 된 것이 DOM이며 개발자는 이렇게 표준화된 DOM을 사용해서 웹 페이지와의 상호작용을 구현할 수 있다.
+
+     ex)
+     <html>
+     <head>
+          <title>Simple</title>
+          <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+     </head>
+     <body>
+          <p class="abstract">It is a truth <em>universally</em>
+               <a href="index.html">acknowledged...</a>
+          </p>
+     </body>
+     </html>
+
+     >브라우저는 HTML의 모든 요소를 객체화하고, 객체를 계층 구조로 묶는다.
+
+                                                       <HTML>
+                                                            |
+                                   		┌━━━━━━━━━━━━━┐
+                              	<head>                          <body>
+                                        |                                 |
+                     		┌━━━━━━━┐                               
+              			 <title>           <link>                  <p>
+                                     href: "style.css"             class : "abstract"...         
+                                     media: "all"...                         |
+                                                                    	┌━━━━━━━┐
+                                                                  <em>                 <a>
+                                                                                        href: "index.html"
+
+     >DOM 객체에는 여러가지 함수가 있는데, 함수는 자바스크립트로 DOM 객체가 특정 기능을 수행하도록 정의한다.
+     >예를 들면, 특정 객체가 키보드 포커스를 받을 수 있게 한다.
+
+     p 요소 안에 포함된 a 요소를 선택하고 a 요소의 URL 속성에 접근할 때,
+     theLink.href
+     theLink.href="http://westciv.com"
+
+
+ 중요한 DOM 객체와 함수
+     
+     window
+     :이 객체를 통해 브라우저 창 관련 속성이나 함수에 접근할 수 있다.
+     
+     ex)
+     answer = window.prompt("What is 3_2");
+     window.alert(answer);
+     alert(theLink.href)
+     :window 객체가 제공하는 함수는 객체이름(window)없이 함수를 직접 사용할 수 있다.
+ 
+     document
+      : 이 객체로 HTML 문서의 다양한 콘텐트에 접근할 수 있다. 
+       예를 들어, document 객체 함수를 사용하여 HTML 문서의 title, URL, form 목록 정보를 가져올 수 있다.
+     : document 객체는 자체 내장 함수 외에도 element 객체가 사용하는 속성과 함수도 사용할 수 있다.
+       (document 객체는 document 인터페이스 뿐 아니라, element 인터페이스도 구현했다고 해석할 수 있음.)
+       
+     ex)
+     document.title  > 문서 제목
+     document.write("Hello world") >문서내용을 출력
+
+     element
+     : HTML 문서의 모든 요소는 DOM 의 element 객체로 표현할 수 있다.
+     : HTML 요소의 className, id속성, 부모 속성을 기준으로 산정한 상대 위치 속성, 요소의 너비와 높이 속성 등 여러 속성을 제공한다.
+
+     getElementsByTagName
+          : 문서 전체에서 특정 요소를 뽑아내기 위해 tag 이름을 사용하는 함수
+            allInputs = document.getElementsByTagName("input");
+     getElementById
+          : HTML 문서 내에서 특정 요소를 가져오기 위해 id 속성값을 사용하는 함수
+            theElement = document.getElementById(site-navigation) :  site-navigation 이라는 id 속성값을 갖는 요소
+
+     style
+     : element 객체에서 배경색상과 같은 특정 HTML 요소의 속성을 직접 수정하려면, element 객체의 style 속성을 사용해야 한다.
+       이때 가져온 style 속성은 style 객체가 되고, 이 객체의 background 속성을 수정해서 element 객체가 의미하는 HTML 요소의 배경색상 속성이 수정된다.
+
+     thePar 변수 : p요소 가지고 있을 때
+     thePar.style.backgroundColor = "red"
+     background-color(CSS의 속성)  ==  backgroundColor(style 객체의 속성)
+
+     : style 객체에서 가져올 수 있는 특정 요소의 스타일 속성은 인라인 타입으로 지정된 스타일 속성만 가능.(외부 링크, 내장 시트 X)
+     : 물론 외부 링크된 시트나, 내장 시트의 스타일 속성에 접근하는 방법이 있기는 하다. getComputedStyle함수를 통해.
+
+     
+ 이벤트
+     :브라우저는 event 객체를 사용자와의 상호작용과 관련 있는 객체나 아래와 같은 이벤트와 관련 있는 객체로 전달.
+     예를 들어 사용자가 링크를 클릭하면 click 이벤트가 a 요소로 전달. 또한， 만일 브라우저 창을스크롤하면 scroll 이벤트가 window 객제로 전달.
+      
+      -특정 요소를 '클릭'할 때 발생하는 이벤트
+      -특정 요소 위에 마우스를 올리거나 떼어낼 때 발생하는 이벤트
+      -키보드를 통해 키를 입력할 때 발생하는 이벤트
+      -HTM 문서가 완전히 로딩되었을 때 발생하는 이벤트
+      -브라우저 창의 크기가 재조정되거나 스크롤할 때 발생하는 이벤트
+      -기타 다른 객체
+
+     이벤트 리스너
+          -인라인 이벤트 핸들러 : 권장하는 이벤트 핸들러는 아님. 
+            <a id="home" href="./" onclick="linkClicked(this)">
+          -addEventListener를 사용한 이벤트 핸들러 : 
+            document.getElementById("home").addEventListener("click", "linkClicked", true)
+     
+     이벤트 전달
+     :문서 내 여러 요소에 같은 종류의 이벤트 핸들러를 등록한 경우, 어떻게 될까요~?
+
+          이벤트 캡처와 이벤트 버블
+          - 이벤트 캡처
+               :최초 최상위 부모가 이벤트를 처리하고, 이후 하위 자손이 이벤트를 처리하는 것. (익스 지원X)
+          - 이벤트 버블
+               :이벤트 리스너를 갖고 있는 최하위 자손이 이벤트를 최초로 처리, 이후 상위 요소가 차례로 이벤트를 처리하는 것. (익스 지원O)
+          document.getElementById("home").addEventListener("click", "linkClicked", true) : 세번째 매개변수에 true > 이벤트 캡처
+                                                                                                                                                           false > 이벤트 버블
+	    ex)
+		<div class="a">
+		<div class="b">
+		<div class="c"></div>
+		</div>
+		</div> 
+	 
+		[스크립트]
+	
+		document.querySelector('.a').addEventListener('click', function(){
+		console.log('a');
+		}, false);
+	
+		document.querySelector('.b').addEventListener('click', function(){
+		console.log('b');
+		}, false);
+	
+		document.querySelector('.c').addEventListener('click', function(){
+		console.log('c');
+		}, false);
+	
+		> c 영역 클릭 시, c - b- a  순으로 이벤트 처리
+	 	:여기서 querySelector는 jquery의 $('셀렉터') 와 비슷.
+
+  표준화 DOM 스크립팅 관련 모범 사례
+
+     절제된 스크립트 처리(unobtrusive scripting)
+     :자바스크립트와 DOM을 완벽히 지원하지 않는 브라우저에서도 해당 사이트의 주요 정보 및 기능을 제공할 수 있도록 신중히 DOM스크립트를 작성한다는 뜻.
+     :자바스크립트 기능을 지원하지 않는 브라우저에서도 해당 상트의 주요 정보 및 기능을 제공한다는 것이 기본 철학
+
+     1) 자바스크립트가 꼭 필요할까요?
+          :절제된 스크립트 처리의 첫 번째 단계는 자바스크립트가 꼭 필요한 상황인지 여부를 확인하는 것이다.
+          
+           ex)mouseover, 얼룩말 줄무늬 테이블(짝수/홀수행 배경색 다르게 지정) - css 구조선택자 이용.
+
+     2)페이지의 마크업 및 디자인 영역과 기능 영역 분리하기
+          :마크업 문서와 기능을 담당하는 코드분리
+          
+           ex) <a href="javascript:void(0)" onclick="link()"/>  
+                <a href="javascript:void(0)"/> , function initialize(){a태그에 link함수 추가} window.onload = initialize; 
+                
+                         (마크업 문서)                                                  (기능 코드)
+
+     폼과 링크
+      :자바스크립트를 지원하지 않는 브라우저를 위해 반드시 알아야 할 두가지 사항 '폼, 링크'
+     링크 : 클릭시 펼쳐지는 기능(콘텐트 펼치기)이 있는 경우, 페이지 로딩 시 모든 콘텐트를 노출하고, 자바스크립트를 통해 감추려는 콘텐트를 숨겨야 자바스크립트를
+               지원하지 않는 브라우저에서도 모든 콘텐트를 확인할 수 있다.
+     폼 : 폼 필드의 유효성 검증은 서버단에서도 필수적으로 해주어야 한다.
+
+     브라우저의 비 호환성
+     
+     ex)
+          if(window.addEventListener) {
+               element.addEventListener(type, expression, bubbling);
+          }else if(window.attachEvent) {
+               elemet.attachEvent('on'+type, expression);
+          }
+          
+     >이렇게, 각 브라우저에서 해당 이벤트를 지원하는지 여부만을 판단하여 스크립팅한다면, 코드를 지능적으로 자동화할 수 있다.
+
+     보안
+          사용자가 임의로 이력한 데이터를 믿으면 안됩니다.
+          :자바스크립트를 이용하여 사용자가 입력한 데이터의 유효성을 검사한다.
+          :서버 단에서 데이터의 유효성 검사를 진행.
+          :사용자의 입력 데이터를 인코딩한다. (ex, <와>는 &gt;, &lt;로 인코딩한다.)
+
+     자바스크립트 라이브러리
+          - JQuery
+          - Prototype
+          - Script.aculo.us
+          - YUI
