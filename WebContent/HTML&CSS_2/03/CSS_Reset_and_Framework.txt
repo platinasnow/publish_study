@@ -1,0 +1,59 @@
+- css 초기화와 프레임 워크
+
+1. css 초기화의 장점
+ - 브라우저마다 기본 설정으로 정해져있는 css의 차이로 인하여 브라우저 호환성을 맞추기 어려움. 
+따라서 전부 초기화 시켜 모두 같은 설정으로 시작하게 하면 브라우저 호환성을 맞추기 쉬워짐.
+
+ 
+2. css 초기화의 반대입장
+- 모든 마크업의 margin과 padding에 0을 주거나, 전체 선택자(*)를 사용하는 일반적인 초기화는 브라우저에 따라
+심각한 성능 저하를 일으킬 수 있음.
+
+- 추가적인 서버 요청이 일어나 사이트 성능이 저하 될 수 있음. (외부 리소스 링크 수를 줄이는 것으로 해결.)
+
+- 사람의 취향마다 초기화를 쓰는 경우와 안쓰는 경우로 갈리나 그에 따른 설정은 해주어야 함.
+
+
+3. 에릭 마이어의 css 초기화 구문
+  
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+http://meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+
+
+
+4. css 프레임 워크
+- bootstrap, yui 등등..
+- css 초기화는 모든 브라우저의 기초 스타일을 설정.
+- css 프레임워크는 글자, 레이아웃, 그밖의 기능을 대상으로 하는 재사용 가능한 주요 css 스타일을 설정.
+
+
+5. css 프레임워크의 장점
+- css를 일일이 작성하지 않아도 됨.
+- 코드 재사용으로 인하여 개발 시간 단축
+- 브라우저 차이를 고려하여 제작되므로 브라우저 호환성이 높음
+- 격자 레이아웃을 쉽게 제작 가능.
+
+
+6. css 프레임워크의 단점
+- css 파일이 여러개 들어있어 성능 저하
+- 디자인의 모두 같아서 개성이 없음.
+
+
