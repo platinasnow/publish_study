@@ -1,0 +1,284 @@
+7장 브라우저의 이해
+같은코드 기반으로
+다른 브라우저, 같은 브라우저라도 버전에 따라 다른 결과가 나타날수 있음.
+
+7-1 개발자가 겪는 브라우저의 세가지 문제점
+·어떤기능에 대한 지원이 아예없음
+·어떤 기능에 대한 지원이 불완전함
+·어쩐 기능에 대한 지원이 버그투성이임. 
+  즉 똑같은 기능의 명세와 구현이 브라우저마다 다름
+
+7-2 브라우저 모드
+
+렌더링모드 -표준모드: 모든 표준이 엄격하게 지켜짐
+	   -관용(비표준)모드: 구버전 브라우저의 렌더링을 흉내냄으로써 
+	    기존의 비표준 기능도 허용됨.
+표준모드 선택 -
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+IE8에 새로 도입된 DOCTYPE 전환 방식 -
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+
+content값 - IE=edge (최신 모드)- 지정된 DOCTYPE에 상관없이 IE8 이상 버전에서 항상 최신 표준 모드가 사용됨.
+
+9장 css 기반의 페이지 레이아웃
+
+9-1 가로 중앙 정렬
+
+text-align속성 - 인라인 콘텐츠 중앙정렬
+width속성 - 블록요소(단락)를 부모요소(div,body)안의 중앙에 맞춤
+
+p {
+ width: 50%;
+ margin: 0 auto;  /*auto:왼쪽마진 오른쪽마진대등하게 나눔 */
+}
+
+*관용모드에서 margin auto 인식되지 못함.
+body {
+ text-align : center /*관용모드에서 블록 요소를 중앙 정렬할수 있는 버그 */
+p {
+text-align : left ;  /*body에 중앙정렬때문에 하위요소에 
+width : 50%;        글자들도 모두 중앙정렬됨으로 텍스트 왼쪽정렬으로 해결
+margin: 0 auto;  */
+}
+
+9-2 세로 중앙 정렬
+vertical-align 속성 - 인라인 요소 정렬
+텍스트 행을 기준으로 이미지 정렬, 테이블 셀(td)의 콘텐트 정렬
+부모요소에 들어있는 블록요소 정렬용도로 사용은 안됨.
+
+9-3 css 위치 지정
+위치지정 방식
+?일반흐름 - 전형적인 방식으로 블록요소는 새로운 블록생성, 인라인 요소는 부모요소안에 행단위로 배치
+  	position-static, relative로 지정된요소는 일반흐름으로 배치됨
+?절대위치 - position 속성값이 absolute나 fixed로 지정된 요소는 절대적 위치에 배치됨
+ 	일반흐름을 벗어남으로, 페이지에 다른요소 배치할때 절대위치 요소는 무시함 
+?부유배치 - 절대 위치 요소와 달리 float 요소는 일반 흐름을 벗어나지 않고 페이지
+ 	 흐름에 영향을 주어 콘텐츠가그 밑을 둘러싸게 됩니다.
+
+위치 지정 속성 
+
+position속성
+? static - 요소가 일반 흐름 안에서서 배치됩니다. 이것이 기본 위치 지정 값입니다
+? relative(상대) - 상대 위치가 지정된 요소는 고정 위치 지정과 마찬가지로 배치된 후 다른 위치로 이동 
+       되지만， 문서 흐름은 그대로 유지됩니다.
+? absolute(절대) - posi tion 속성에 absolute 값이 지정된 요소는 문서 흐름을 완전히 벗어나서 부모 
+  블록 요소를 기준으로 한 위치에 배치됩니다.
+? fixed - position 속성에 fixed 값이 지정된 요소는 문서 흐름을 완전히 벗어나서 뷰포트를
+    기준으로상대 위치에 배치됩니다.
+
+뷰포트: 보통 창을 의미하지만， 창 개념이 없는 iPhone 에서는 화면자체를 의미합니다
+
+
+절대 위치 지정 실습
+
+<style type="text/css">
+h2 {
+ margin-top: 0;
+}
+#header {
+
+}
+#container {
+ position: relative;
+}
+#navigation {
+ width: 20%
+ position: fixed;
+ top: 5em;
+}
+#content {
+ width: 70%;
+ position: absolute;
+ top: 0;
+ left: 25%;
+}
+#footer {
+
+}
+</style>
+
+<div id="header">
+ <h1>This is the header</h1>
+</div>
+<div id= "container" >
+ <div id= "navigation">
+  <h2>Navigation</h2>
+   <ul>
+    <li>home</li>
+    <li>store</li>
+    <li>help</li>
+    <li>contact</li>
+   </ul>
+ </div> <!--navigation-->
+ <div id="content">
+  <h2>Content</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur 
+	The HTML Certificate documents your knowledge of HTML.
+	The CSS Certificate documents your knowledge of advanced CSS.
+	The JavaScript Certificate documents your knowledge of JavaScript and HTML DOM.
+	The jQuery Certificate documents your knowledge of jQuery.
+	The PHP Certificate documents your knowledge of PHP and SQL (MySQL).
+	The XML Certificate documents your knowledge of XML, XML DOM and XSLT.
+	The Bootstrap Certificate documents your knowledge of the Bootstrap framework.
+	The HTML Certificate documents your knowledge of HTML.
+	The CSS Certificate documents your knowledge of advanced CSS.
+	The JavaScript Certificate documents your knowledge of JavaScript and HTML DOM.
+	The jQuery Certificate documents your knowledge of jQuery.
+	The PHP Certificate documents your knowledge of PHP and SQL (MySQL).
+	The XML Certificate documents your knowledge of XML, XML DOM and XSLT.
+	The Bootstrap Certificate documents your knowledge of the Bootstrap framework.</p>
+ </div> <!--content-->
+</div> <!--container-->
+<div id= "footer">
+ <h2>Footer</h2>
+ <p>Lorem ipsum dolor sit ... </p>
+</div> <!--footer-->
+
+**footer랑 content가 겹치는 이유
+->절대위치 요소는 상대위치 요소 안에 들어있더라도 페이지 흐름에 영향주지 않음.
+->footer요소가 navigation요소 바로 아래로 오게되는거임.
+
+9-4 float 적용 레이아웃
+
+부유된 가로 내비게이션 바
+<style type="text/css">
+li{
+ float: left;
+ width: 16.6%;                /* 너비지정 안된항목은 너비도 같이 지정해줘야함 */
+}
+li a{
+	display:block;	      /* 박스채우기 - 부모 요소의 높이와너비에 맞춰 패딩 가장자리까지 꽉차게 해줌.  */
+}
+ul {
+	border-style: solid;  /* 부모요소 안에 있는 어떠한요소들은 높이가 없는 상태임  */
+	overflow: auto;	      /* float요소높이를 부모 요소 높이 계싼에 포함 시켜줌 */
+	width: 100%;
+}
+</style>
+<ul class= "sitesections">
+	<li><a href="http://westciv.com/style_master/index.html" >style master</a></li>
+	<li><a href="http://westciv.com/tools" >tools</a></li>
+	<li><a href="http://westciv.com/style_master/house/index. html">resources</a></li>
+	<li><a href="http://westciv.com/westciv/downloads.html" >downloads</a></li>
+	<li><a href="http://order.kagi.com?WC4" >store</a></li>
+	<li><a href="http://westciv.com/style_master/blog/feed">RSS</a></li>
+</ul>
+
+
+float레이아웃 
+단점: 목록 항목의 전체 너비가 컨테이너 요소의 너비를 
+      초과하면 float 요소 첫 행의 바로 아래로 목록 항목이 한 개 이상 내려감.
+장점: 문서 흐름에 배제되지 않으므로, 
+      float요소 때문에 나머지 부분이 영향을 받는 단점을 해결하려 복잡한 css 작성 필요없음.
+
+float 다단 레이아웃
+
+<style type="text/css">
+
+</style>
+</head>
+<body>
+	<div id="header">
+		<h1>이영역은 헤더 입니다</h1>
+	</div>
+	<div id="navigation">
+		<h2>네비게이션</h2>
+		<ul>
+			<li>메인</li>
+			<li>스토어</li>
+			<li>고객센터</li>
+			<li>연락처</li>
+		</ul>
+	</div> <!-- 네비게이션 -->
+	
+	<div id="content">
+		<h2>콘텐츠</h2>
+		<p>With HTML you can create your own Web site.</p>
+	</div> <!-- 콘텐츠 -->
+	<div id="advertisements">
+		<h2>물건 구입</h2>
+		<ul>
+			<li>소프트웨어</li>
+			<li>하드웨어</li>
+			<li>티셔츠</li>
+			<li>카페인</li>
+		</ul>
+	</div> <!-- 광고 -->
+	
+	<div id="footer">
+		<h2>푸터</h2>
+		<p>Lorem ipsum dolor sit</p>
+	</div> <!-- 푸터 -->
+
+고정너비 레이아웃
+다단레이아웃에서 단의 너비를 px단위로 지정 
+-> 창니아 글자 크기가 변해도 단의 크기 변하지 않음.
+단점 - 화면크기에 따라 적절한 레이아웃이 힘들어짐.
+해결방법 -> 
+
+유동 레이아웃
+단의 너비를 %로 지정 -> 단의 너비가 자동으로 창이나 뷰포트에 맞게 조정됨.
+단점 - 아주 넓거나 좁은 화면에서 보면 가독성이 떨어질수도 있음
+해결방법 -> min-width, max-width사용 (**IE7,8 관용모드에서 지원안됨)
+
+탄력 레이아웃
+단의 너비를 em단위로 지정 
+-> 사용자가 글자 크기를 확대,축소해도 행에들어 있는 글자 크기에 영향을 덜받음
+
+색상문제
+가짜단
+#content {
+	float: left;
+	width: 580px;
+}
+#navigation {
+	float : left;
+	width : 180px;
+}
+부모요소에 두단의 배경색처러 보이는 하나의 배경이미지를 지정
+이미지의 각부분이 두단의 너비와 같게해서 콘텐트가 배경이미지 위에표시되게 해줌
+
+일진 레이아웃
+container영역으로 묶고 안에 영역들을 넣어줌
+<div id= "container" >
+ <div id= "navigation">
+  <!-- 네비게이션 영역 -->
+ </div>
+ <div id= "content">
+  <!-- 콘텐츠 영역 -->
+ </div>
+ <div id= "advertisements">
+  <!-- 광고 영역 -->
+ </div>
+</div>
+
+격자 레이아웃
+-css2.1 테이블 레이아웃 속성
+앞의 css페이지 레이아웃 모델은 html테이블 모델과는 전혀 다른 원리로 설계됨.
+css2.1에서는 html테이블 모델을 css로 재현한 것임.
+유동 다단 레이아웃을 추가적인 container요소 없이 구현할수 있음.
+
+테이블 행 - display:table-rwo
+테이블의 td요소 - display:table-cell
+
+<style type="text/css">
+#content {
+ display: table-cell;
+ width: 66%;
+ background-color: #e02d12;
+}
+#navigation {
+ display: table-cell;
+ background-color: #6cf625;
+}
+</style>
+
+ <div id= "navigation">
+  <!-- 네비게이션 영역 -->
+ </div>
+ <div id= "content">
+  <!-- 콘텐츠 영역 -->
+ </div>
+
+단점 -> html태크 순서가 레이아웃에 따라 달라야 함.
+

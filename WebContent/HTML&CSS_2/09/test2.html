@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+li {
+ float: left;
+ width: 16.6%;		/* 너비지정 안된항목은 너비도 같이 지정해줘야함 */
+ /* float:right; */
+}  
+li a{
+	display:block;		/* 박스채우기 - 부모 요소의 높이와너비에 맞춰 패딩 가장자리까지 꽉차게 해줌.  */
+}
+ul {
+	border-style: solid; /* 부모요소 안에 있는 어떠한요소들은 높이가 없는 상태임  */
+	overflow: auto;			 /* float요소높이를 부모 요소 높이 계싼에 포함 시켜줌 */
+	width: 100%;
+}
+</style>
+</head>
+<body>
+	<ul class= "sitesections">
+		<li><a href="http://westciv.com/style_master/index.html" >style master</a></li>
+		<li><a href="http://westciv.com/tools" >tools</a></li>
+		<li><a href="http://westciv.com/style_master/house/index. html">resources</a></li>
+		<li><a href="http://westciv.com/westciv/downloads.html" >downloads</a></li>
+		<li><a href="http://order.kagi.com?WC4" >store</a></li>
+	  <li><a href="http://westciv.com/style_master/blog/feed">RSS</a></li>
+	</ul>
+</body>
+</html>

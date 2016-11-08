@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+#container{
+	overflow: hidden; /* 부모요소의 실제 높이를 넘어가는 콘텐츠 짤림(패딩도 포함) */
+}
+#navigation {
+ float : left;
+ width: 20%;
+ background-color: #6cf625;
+ padding-bottom: 50em;
+ margin-bottom: -50em;
+}
+#content {
+ float : left;
+ width: 40em;
+ background-color: #e02d12;
+ padding-bottom: 50em;
+ margin-bottom: -50em;
+}
+
+#advertisements {
+ float : left;
+ width: 20%;
+ background-color: #0019f9;
+ padding-bottom: 50em;
+ margin-bottom: -50em;
+}
+#footer{
+	clear:both; /* float요소 높이가 제일큰거 밑으로 내려감  */
+}
+</style>
+</head>
+<body>
+	<div id="header">
+	<h1>This is the header</h1>
+	</div>
+	<div id= "container" >
+	 <div id= "navigation">
+	 	<h2>Navigation</h2>
+			<ul>
+				<li>home</li>
+				<li>store</li>
+				<li>help</li>
+				<li>contact</li>
+			</ul>
+	  <!-- 네비게이션 영역 -->
+	 </div>
+	 <div id= "content">
+	 	<h2>Content</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur 
+						The HTML Certificate documents your knowledge of HTML.
+						The CSS Certificate documents your knowledge of advanced CSS.
+						The JavaScript Certificate documents your knowledge of JavaScript and HTML DOM.
+						The jQuery Certificate documents your knowledge of jQuery.
+						The PHP Certificate documents your knowledge of PHP and SQL (MySQL).
+						The XML Certificate documents your knowledge of XML, XML DOM and XSLT.
+						The Bootstrap Certificate documents your knowledge of the Bootstrap framework.
+						The HTML Certificate documents your knowledge of HTML.
+						The CSS Certificate documents your knowledge of advanced CSS.
+						The JavaScript Certificate documents your knowledge of JavaScript and HTML DOM.
+						The jQuery Certificate documents your knowledge of jQuery.
+						The PHP Certificate documents your knowledge of PHP and SQL (MySQL).
+						The XML Certificate documents your knowledge of XML, XML DOM and XSLT.
+						The Bootstrap Certificate documents your knowledge of the Bootstrap framework.						
+			 </p>
+	  <!-- 콘텐츠 영역 -->
+	 </div>
+	 <div id= "advertisements">
+	 	<h2>advertisements</h2>
+			<p>Lorem ipsum dolor sit ... </p>
+		  <!-- 광고 영역 -->
+	 </div>
+	</div>
+	<div id= "footer">
+	<h2>Footer</h2>
+	<p>Lorem ipsum dolor sit ... </p>
+	</div> <!--footer-->
+</body>
+</html>

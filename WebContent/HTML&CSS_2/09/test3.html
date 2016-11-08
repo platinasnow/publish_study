@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+/* 고정 레이아웃 
+body {
+	width: 1000px;
+}
+#navigation {
+	float : left;
+	width : 200px;
+}
+#content {
+	float: left;
+	width: 600px;
+}
+#advertisements{
+	float : left;
+	width: 200px;
+} */
+/*  유동 레이아웃
+body {
+	min-width: 640px;
+	margin: 0 auto;
+}
+#navigation {
+	float : left;
+	width : 20%;
+	max-width: 200px;
+	min-width: 120px;
+}
+#content {
+	float: left;
+	width: 60%;
+	max-width: 800px;
+	min-width: 400px;
+}
+#advertisements{
+	float : left;
+	width: 20%;
+	max-width: 200px;
+	min-width: 120px;
+} */
+
+body {
+	min-width: 640px;
+	margin: 0 auto;
+}
+#navigation {
+	float : left;
+	width : 20%;
+}
+#content {
+	float: left;
+	width: 40em;
+}
+#advertisements{
+	float : left;
+	width: 20%;
+}
+#footer{
+	clear:both; /* float요소 높이가 제일큰거 밑으로 내려감  */
+}
+</style>
+</head>
+<body>
+	<div id="header">
+		<h1>이영역은 헤더 입니다</h1>
+	</div>
+	<div id="navigation">
+		<h2>네비게이션</h2>
+		<ul>
+			<li>메인</li>
+			<li>스토어</li>
+			<li>고객센터</li>
+			<li>연락처</li>
+		</ul>
+	</div> <!-- 네비게이션 -->
+	
+	<div id="content">
+		<h2>콘텐츠</h2>
+		<p>With HTML you can create your own Web site.</p>
+	</div> <!-- 콘텐츠 -->
+	<div id="advertisements">
+		<h2>물건 구입</h2>
+		<ul>
+			<li>소프트웨어</li>
+			<li>하드웨어</li>
+			<li>티셔츠</li>
+			<li>카페인</li>
+		</ul>
+	</div> <!-- 광고 -->
+	
+	<div id="footer">
+		<h2>푸터</h2>
+		<p>Lorem ipsum dolor sit</p>
+	</div> <!-- 푸터 -->
+</body>
+</html>
